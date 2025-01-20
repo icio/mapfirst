@@ -1,23 +1,23 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"runtime"
 	"strconv"
 )
 
 func main() {
-	const (
-		mapElements = 1000
-		iterations  = 10_000
-	)
+	n := flag.Int("n", 100, "number of elements in the map")
+	w := flag.Int("w", 100_000, "number of times to iterate over the first item")
+	flag.Parse()
 
-	m := make(map[int]int, mapElements)
-	for i := range mapElements {
+	m := make(map[int]int, *n)
+	for i := range *n {
 		m[i] = 0
 	}
 
-	for range iterations {
+	for range *w {
 		for i := range m {
 			m[i] = m[i] + 1
 			break
