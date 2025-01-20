@@ -1,3 +1,3 @@
-module github.com/icio/mapiter
+module github.com/icio/mapfirst
 
-go 1.23.3
+go 1.0.0
